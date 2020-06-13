@@ -31,6 +31,11 @@ module.exports = (env) => {
         '@components': path.resolve(__dirname, `./src/components`),
         '@consts': path.resolve(__dirname, './src/consts.js'),
       }
-    }
-  }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        React: `react`,
+      }),
+    ]
+  };
 };

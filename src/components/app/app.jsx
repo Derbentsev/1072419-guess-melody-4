@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import {WelcomeScreen} from '@components/welcome-screen/welcome-screen.jsx';
 
