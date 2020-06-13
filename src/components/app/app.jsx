@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {WelcomeScreen} from '@components/welcome-screen/welcome-screen.jsx';
+import {WelcomeScreen} from '@components/welcome-screen/welcome-screen';
 
 
 export const App = (props) => {
