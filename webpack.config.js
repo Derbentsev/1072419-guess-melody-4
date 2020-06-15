@@ -1,4 +1,5 @@
 const path = require(`path`);
+const webpack = require(`webpack`);
 
 module.exports = (env) => {
   return {
@@ -29,8 +30,15 @@ module.exports = (env) => {
     resolve: {
       alias: {
         '@components': path.resolve(__dirname, `./src/components`),
-        '@consts': path.resolve(__dirname, './src/consts.js'),
-      }
-    }
+        '@consts': path.resolve(__dirname, './src'),
+      },
+      modules: [`node_modules`, path.resolve(path.join(__dirname, `public`))],
+      extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`],
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        React: `react`,
+      }),
+    ],
   }
 };
