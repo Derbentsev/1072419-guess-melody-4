@@ -1,9 +1,9 @@
 import {WelcomeScreen} from '@components/welcome-screen/welcome-screen';
 import {PureComponent} from 'react';
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
-import {ArtistQuestionScreen} from '';
-import {GenreQuestionScreen} from '';
+import {ArtistQuestionScreen} from '@components/artist-question-screen/artist-question-screen';
+import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
 import {GameType} from '@consts/consts.js';
+import {Switch, Route, BrowserRouter} from 'react-router-dom';
 
 
 export class App extends PureComponent {

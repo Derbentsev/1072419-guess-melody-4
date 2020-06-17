@@ -1,5 +1,5 @@
 export const WelcomeScreen = (props) => {
-  const {errorCount, onWelcomeButtonClick} = props;
+  const {errorsCount, onWelcomeButtonClick} = props;
 
   return (
     <section className="welcome">
@@ -17,7 +17,7 @@ export const WelcomeScreen = (props) => {
       <p className="welcome__text">Правила просты:</p>
       <ul className="welcome__rules-list">
         <li>Нужно ответить на все вопросы.</li>
-        <li>Можно допустить {errorCount} ошибки.</li>
+        <li>Можно допустить {errorsCount} ошибки.</li>
       </ul>
       <p className="welcome__text">Удачи!</p>
     </section>
@@ -25,6 +25,6 @@ export const WelcomeScreen = (props) => {
 };
 
 WelcomeScreen.propTypes = {
-  errorCount: PropTypes.number.isRequired,
+  errorsCount: PropTypes.number.isRequired,
   onWelcomeButtonClick: PropTypes.func.isRequired,
 };

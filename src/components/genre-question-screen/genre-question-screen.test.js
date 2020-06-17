@@ -1,4 +1,4 @@
-import {GenreQuestionScreen} from './genre-question-screen.test';
+import GenreQuestionScreen from './genre-question-screen';
 
 
 const question = {

@@ -6,6 +6,7 @@ module.exports = {
   "moduleFileExtensions": [`ts`, `tsx`, `js`, `jsx`, `json`, `node`],
   "moduleNameMapper": {
     "^@components(.*)$": `<rootDir>/src/components/$1`,
+    "^@consts(.*)$": `<rootDir>/src/consts/$1`,
   },
   "coveragePathIgnorePatterns": [`/test-setup.js`]
 };

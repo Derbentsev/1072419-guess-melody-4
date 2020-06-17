@@ -41,7 +41,7 @@ const questions = [
 it(`Render App`, () => {
   const tree = renderer
         .create(<App
-          errorCount = {3}
+          errorsCount = {3}
           questions = {questions}
         />)
         .toJSON();

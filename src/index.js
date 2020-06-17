@@ -6,7 +6,7 @@ import questions from '@mocks/questions';
 
 ReactDOM.render(
     <App
-      errorCount = {ERROR_COUNT}
+      errorsCount = {ERROR_COUNT}
       questions = {questions}
     />,
     document.querySelector(`#root`)
