@@ -1,6 +1,3 @@
-import PropTypes from 'prop-types';
-
-
 export const WelcomeScreen = (props) => {
   const {errorCount, onWelcomeButtonClick} = props;
 

@@ -29,8 +29,8 @@ module.exports = (env) => {
     devtool: `source-map`,
     resolve: {
       alias: {
-        '@components': path.resolve(__dirname, `./src/components`),
-        '@consts': path.resolve(__dirname, `./src`),
+        '@components': path.resolve(__dirname, `./src/components/`),
+        '@consts': path.resolve(__dirname, `./src/consts/`),
       },
       modules: [`node_modules`, path.resolve(path.join(__dirname, `public`))],
       extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`]
