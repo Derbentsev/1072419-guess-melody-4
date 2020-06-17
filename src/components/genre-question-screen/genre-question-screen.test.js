@@ -1,4 +1,4 @@
-import GenreQuestionScreen from './genre-question-screen';
+import {GenreQuestionScreen} from './genre-question-screen.test';
 
 
 const question = {
@@ -22,8 +22,8 @@ const question = {
 it(`GenreQuestionScreen is rendered correctly`, () => {
   const tree = renderer.create((
     <GenreQuestionScreen
-      question={question}
-      onAnswer={() => {}}
+      question = {question}
+      onAnswer = {() => {}}
     />
   ), {
     createNodeMock: () => {
