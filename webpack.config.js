@@ -14,6 +14,7 @@ module.exports = (env) => {
       open: true,
       inline: true,
       port: 1337,
+      historyApiFallback: true,
     },
     module: {
       rules: [
@@ -29,8 +30,9 @@ module.exports = (env) => {
     devtool: `source-map`,
     resolve: {
       alias: {
-        '@components': path.resolve(__dirname, `./src/components`),
-        '@consts': path.resolve(__dirname, `./src`),
+        '@components': path.resolve(__dirname, `./src/components/`),
+        '@consts': path.resolve(__dirname, `./src/consts/`),
+        '@mocks': path.resolve(__dirname, `./src/mocks/`),
       },
       modules: [`node_modules`, path.resolve(path.join(__dirname, `public`))],
       extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`]
