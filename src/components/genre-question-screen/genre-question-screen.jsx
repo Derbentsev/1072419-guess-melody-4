@@ -1,8 +1,7 @@
-import {GameType} from '@consts/consts';
-import {PureComponent} from 'react';
+import {GameType} from '@consts/index';
 
 
-export default class GenreQuestionScreen extends PureComponent {
+export default class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
     super(props);
 

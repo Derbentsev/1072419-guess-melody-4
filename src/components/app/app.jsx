@@ -1,12 +1,10 @@
 import {WelcomeScreen} from '@components/welcome-screen/welcome-screen';
-import {PureComponent} from 'react';
 import {ArtistQuestionScreen} from '@components/artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
-import {GameType} from '@consts/consts.js';
-import {Switch, Route, BrowserRouter} from 'react-router-dom';
+import {GameType} from '@consts/index';
 
 
-export class App extends PureComponent {
+export class App extends React.PureComponent {
   constructor(props) {
     super(props);
 

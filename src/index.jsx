@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
-import {App} from '@components/app/app.jsx';
-import {ERROR_COUNT} from '@consts/consts';
+import {App} from '@components/app/app';
+import {ERROR_COUNT} from '@consts/index';
 import questions from '@mocks/questions';
 
 

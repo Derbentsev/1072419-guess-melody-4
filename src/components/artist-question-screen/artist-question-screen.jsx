@@ -1,4 +1,4 @@
-import {GameType} from '@consts/consts';
+import {GameType} from '@consts/index';
 
 
 export const ArtistQuestionScreen = (props) => {
