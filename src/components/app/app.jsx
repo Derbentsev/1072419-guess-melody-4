@@ -2,9 +2,10 @@ import {WelcomeScreen} from '@components/welcome-screen/welcome-screen';
 import {ArtistQuestionScreen} from '@components/artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
 import {GameType} from '@consts/index';
+import GameScreen from '@components/game-screen/game-screen';
 
 
-export class App extends React.PureComponent {
+export default class App extends React.PureComponent {
   constructor(props) {
     super(props);
 
@@ -35,25 +36,33 @@ export class App extends React.PureComponent {
       switch (question.type) {
         case GameType.ARTIST:
           return (
-            <ArtistQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}
-            />
+            <GameScreen
+              type = {question.type}
+            >
+              <ArtistQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameScreen>
           );
         case GameType.GENRE:
           return (
-            <GenreQuestionScreen
-              question={question}
-              onAnswer={() => {
-                this.setState((prevState) => ({
-                  step: prevState.step + 1,
-                }));
-              }}
-            />
+            <GameScreen
+              type = {question.type}
+            >
+              <GenreQuestionScreen
+                question={question}
+                onAnswer={() => {
+                  this.setState((prevState) => ({
+                    step: prevState.step + 1,
+                  }));
+                }}
+              />
+            </GameScreen>
           );
       }
     }
