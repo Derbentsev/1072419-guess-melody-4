@@ -1,8 +1,8 @@
-import {WelcomeScreen} from '@components/welcome-screen/welcome-screen';
-import {ArtistQuestionScreen} from '@components/artist-question-screen/artist-question-screen';
+import WelcomeScreen from '@components/welcome-screen/welcome-screen';
+import ArtistQuestionScreen from '@components/artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
-import {GameType} from '@consts/index';
 import GameScreen from '@components/game-screen/game-screen';
+import {GameType} from '@consts/index';
 
 
 export default class App extends React.PureComponent {

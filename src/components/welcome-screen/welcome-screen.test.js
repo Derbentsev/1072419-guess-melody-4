@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import {WelcomeScreen} from './welcome-screen';
+import WelcomeScreen from './welcome-screen';
 
 
 it(`Should WelcomeScreen render correctly`, () => {

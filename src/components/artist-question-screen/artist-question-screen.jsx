@@ -1,4 +1,5 @@
 import {GameType} from '@consts/index';
+import AudioPlayer from '@components/audio-player/audio-player';
 
 
 export const ArtistQuestionScreen = (props) => {
@@ -13,12 +14,10 @@ export const ArtistQuestionScreen = (props) => {
       <h2 className="game__title">Кто исполняет эту песню?</h2>
       <div className="game__track">
         <div className="track">
-          <button className="track__button track__button--play" type="button" />
-          <div className="track__status">
-            <audio
-              src={song.src}
-            />
-          </div>
+          <AudioPlayer
+            isPlaying = {true}
+            src = {song.src}
+          />
         </div>
       </div>
 
@@ -56,3 +55,6 @@ ArtistQuestionScreen.propTypes = {
     type: PropTypes.oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
   }).isRequired,
 };
+
+
+export default ArtistQuestionScreen;

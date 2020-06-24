@@ -1,3 +1,4 @@
+import AudioPlayer from '@components/audio-player/audio-player';
 import {GameType} from '@consts/index';
 
 
@@ -31,11 +32,10 @@ export default class GenreQuestionScreen extends React.PureComponent {
           {answers.map((answer, i) => (
             <div key={`${i}-${answer.src}`} className="track">
               <button className="track__button track__button--play" type="button"/>
-              <div className="track__status">
-                <audio
-                  src={answer.src}
-                />
-              </div>
+              <AudioPlayer
+                isPlaying = {i === 0}
+                src = {answer.src}
+              />
               <div className="game__answer">
                 <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`}
                   id={`answer-${i}`}
