@@ -2,8 +2,12 @@ import WelcomeScreen from '@components/welcome-screen/welcome-screen';
 import ArtistQuestionScreen from '@components/artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
 import GameScreen from '@components/game-screen/game-screen';
+import withAudioPlayer from '@hocs/with-audio-player/with-audio-player';
 import {GameType} from '@consts/index';
 
+
+const GenreQuestionScreenWrapped = withAudioPlayer(GenreQuestionScreen);
+const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);
 
 export default class App extends React.PureComponent {
   constructor(props) {
@@ -39,7 +43,7 @@ export default class App extends React.PureComponent {
             <GameScreen
               type = {question.type}
             >
-              <ArtistQuestionScreen
+              <ArtistQuestionScreenWrapped
                 question={question}
                 onAnswer={() => {
                   this.setState((prevState) => ({
@@ -54,7 +58,7 @@ export default class App extends React.PureComponent {
             <GameScreen
               type = {question.type}
             >
-              <GenreQuestionScreen
+              <GenreQuestionScreenWrapped
                 question={question}
                 onAnswer={() => {
                   this.setState((prevState) => ({
@@ -80,13 +84,13 @@ export default class App extends React.PureComponent {
             {this._renderGameScreen()}
           </Route>
           <Route exact path='/artist'>
-            <ArtistQuestionScreen
+            <ArtistQuestionScreenWrapped
               question={questions[1]}
               onAnswer={() => {}}
             />
           </Route>
           <Route exact path = '/genre'>
-            <GenreQuestionScreen
+            <GenreQuestionScreenWrapped
               question={questions[0]}
               onAnswer={() => {}}
             />

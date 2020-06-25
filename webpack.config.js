@@ -33,6 +33,7 @@ module.exports = (env) => {
         '@components': path.resolve(__dirname, `./src/components/`),
         '@consts': path.resolve(__dirname, `./src/consts/`),
         '@mocks': path.resolve(__dirname, `./src/mocks/`),
+        '@hocs': path.resolve(__dirname, `./src/hocs/`),
       },
       modules: [`node_modules`, path.resolve(path.join(__dirname, `public`))],
       extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`]
