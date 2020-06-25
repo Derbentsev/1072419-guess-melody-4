@@ -1,4 +1,4 @@
-import {ArtistQuestionScreen} from './artist-question-screen';
+import ArtistQuestionScreen from './artist-question-screen';
 
 
 const mock = {
