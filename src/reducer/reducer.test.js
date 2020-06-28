@@ -38,12 +38,12 @@ const questions = [
 ];
 
 it(`Reducer without additional parameters should return initial state`, () => {
-  expect(reducer(void 0, {}).toEqual({
+  expect(reducer(void 0, {})).toEqual({
     step: -1,
     mistakes: 0,
     maxMistakes: 3,
     questions,
-  }));
+  });
 });
 
 it(`Reducer should increment current step by a given value`, () => {

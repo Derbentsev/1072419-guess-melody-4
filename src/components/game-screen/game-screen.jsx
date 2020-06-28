@@ -1,6 +1,6 @@
 import {GameType} from '@consts/index';
 import {connect} from 'react-redux';
-import Mistakes from '@mistakes/mistakes/mistakes'
+import Mistakes from '@components/mistakes/mistakes';
 
 
 const GameScreen = (props) => {
