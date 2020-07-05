@@ -2,14 +2,15 @@ import WelcomeScreen from '@components/welcome-screen/welcome-screen';
 import ArtistQuestionScreen from '@components/artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '@components/genre-question-screen/genre-question-screen';
 import GameScreen from '@components/game-screen/game-screen';
-import withAudioPlayer from '@hocs/with-audio-player/with-audio-player';
+import withActivePlayer from '@hocs/with-active-player/with-active-player';
+import withUserAnswer from '@hocs/with-user-answer/with-user-answer'
 import {GameType} from '@consts/index';
 import {connect} from 'react-redux';
 import {ActionCreator} from '@reducer/reducer';
 
 
-const GenreQuestionScreenWrapped = withAudioPlayer(GenreQuestionScreen);
-const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);
+const GenreQuestionScreenWrapped = withActivePlayer(withUserAnswer(GenreQuestionScreen));
+const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 
 class App extends React.PureComponent {
   _renderGameScreen() {
