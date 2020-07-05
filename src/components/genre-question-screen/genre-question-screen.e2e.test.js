@@ -33,6 +33,7 @@ it(`When user answers genre question form is not sent`, () => {
     onAnswer = {onAnswer}
     question = {question}
     renderPlayer = {() => {}}
+    onChange = {() => {}}
     userAnswers = {[false, false, false, false]}
   />);
 
@@ -51,7 +52,7 @@ it(`User answer passed to callback is consistent with "userAnswer" prop`, () => 
   const onAnswer = jest.fn((...args) => [...args]);
   const userAnswer = [false, true, false, false];
 
-  const genreQuestion = shallow(<GenreQuestionScreen
+  const genreQuestion = mount(<GenreQuestionScreen
     onAnswer = {onAnswer}
     question = {question}
     renderPlayer = {() => {}}

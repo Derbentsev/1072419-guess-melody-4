@@ -1,4 +1,5 @@
 import {GameType} from '@consts/index';
+import GenreQuestionItem from '@components/genre-question-item/genre-question-item';
 
 
 export default class GenreQuestionScreen extends React.PureComponent {
@@ -10,7 +11,7 @@ export default class GenreQuestionScreen extends React.PureComponent {
       onChange,
       question,
       renderPlayer,
-      usreAnswers,
+      userAnswers,
     } = this.props;
     const {
       answers,
@@ -28,24 +29,14 @@ export default class GenreQuestionScreen extends React.PureComponent {
           }}
         >
           {answers.map((answer, i) => (
-            <div key={`${i}-${answer.src}`} className="track">
-              <button className="track__button track__button--play" type="button"/>
-              {renderPlayer(answer.src, i)}
-              <div className="game__answer">
-                <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`}
-                  id={`answer-${i}`}
-                  checked={userAnswers[i]}
-                  onChange={(evt) => {
-                    const value = evt.target.checked;
-
-                    this.setState({
-                      answers: [...userAnswers.slice(0, i), value, ...userAnswers.slice(i + 1)],
-                    });
-                  }}
-                />
-                <label className="game__check" htmlFor={`answer-${i}`}>Отметить</label>
-              </div>
-            </div>
+            <GenreQuestionItem
+              answer={answer}
+              id={i}
+              key={`${i}-${answer.src}`}
+              onChange={onChange}
+              renderPlayer={renderPlayer}
+              userAnswer={userAnswers[i]}
+            />
           ))}
 
           <button className="game__submit button" type="submit">Ответить</button>
