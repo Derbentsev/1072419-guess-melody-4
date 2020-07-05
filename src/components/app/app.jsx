@@ -22,6 +22,7 @@ class App extends React.PureComponent {
       questions,
       onUserAnswer,
       onWelcomeButtonClick,
+      resetGame,
       step,
     } = this.props;
     const question = questions[step];
@@ -38,7 +39,7 @@ class App extends React.PureComponent {
     if (mistakes >= maxMistakes) {
       return (
         <GameOverScreen
-          onReplayButtonClick = {() => {}}
+          onReplayButtonClick = {resetGame}
         />
       );
     }
@@ -48,7 +49,7 @@ class App extends React.PureComponent {
         <WinScreen
           questionsCount={questions.length}
           mistakesCount={mistakes}
-          onReplayButtonClick={() => {}}
+          onReplayButtonClick={resetGame}
         />
       );
     }
@@ -116,6 +117,7 @@ App.propTypes = {
   questions: PropTypes.array.isRequired,
   onUserAnswer: PropTypes.func.isRequired,
   onWelcomeButtonClick: PropTypes.func.isRequired,
+  resetGame: PropTypes.func.isRequired,
   step: PropTypes.number.isRequired,
 };
 
@@ -134,6 +136,9 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.incrementMistake(question, answer));
     dispatch(ActionCreator.incrementStep());
   },
+  resetGame() {
+    dispatch(ActionCreator.resetGame());
+  }
 });
 
 
