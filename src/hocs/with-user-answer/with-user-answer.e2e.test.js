@@ -38,7 +38,7 @@ it(`Should change answers`, () => {
   expect(wrapper.props().userAnswers).toEqual([false, false, false, false]);
 
   wrapper.props().onChange(0, true);
-  expect(wrapper.props().userAnswers).toEqual([false, false, false, false]);
+  expect(wrapper.props().userAnswers).toEqual([true, false, false, false]);
 
   wrapper.props().onChange(1, true);
   expect(wrapper.props().userAnswers).toEqual([true, true, false, false]);
