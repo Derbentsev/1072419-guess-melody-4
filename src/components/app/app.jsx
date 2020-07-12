@@ -9,6 +9,7 @@ import WinScreen from '@components/win-screen/win-screen';
 import {GameType} from '@consts/index';
 import {connect} from 'react-redux';
 import {ActionCreator} from '@reducer/game/game';
+import AuthScreen from '@components/auth-screen/auth-screen';
 import {AuthorizationStatus} from '@reducer/user/user';
 import {getStep, getMistakes, getMaxMistakes} from '@reducer/game/selectors';
 import {getQuestions} from '@reducer/data/selectors';
@@ -110,6 +111,12 @@ class App extends React.PureComponent {
             <GenreQuestionScreenWrapped
               question={questions[0]}
               onAnswer={() => {}}
+            />
+          </Route>
+          <Route exact path = '/dev-auth'>
+            <AuthScreen
+              onReplayButtonClick = {() => {}}
+              onSubmit = {() => {}}
             />
           </Route>
         </Switch>
