@@ -3,7 +3,6 @@ const AuthorizationStatus = {
   NO_AUTH: `NO_AUTH`,
 };
 
-
 const initialState = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
 };

@@ -12,7 +12,7 @@ const getMistakes = (state) => {
 };
 
 const getMaxMistakes = (state) => {
-  return state[NAME_SPACE].getMaxMistakes;
+  return state[NAME_SPACE].maxMistakes;
 };
 
 

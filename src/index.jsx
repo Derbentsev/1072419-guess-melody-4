@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import App from '@components/app/app';
 import {createStore, applyMiddleware} from 'redux';
-import thunk from 'react-redux';
+import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
 import reducer from '@reducer/reducer.js';
 import {Operation as DataOperation} from '@reducer/data/data';

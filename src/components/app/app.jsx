@@ -150,10 +150,10 @@ App.propTypes = {
 
 const mapStateProps = (state) => ({
   authorizationStatus: getAuthorizationStatus(state),
-  step: state.step,
-  maxMistakes: state.maxMistakes,
-  questions: state.questions,
-  mistakes: state.mistakes,
+  step: getStep(state),
+  maxMistakes: getMaxMistakes(state),
+  questions: getQuestions(state),
+  mistakes: getMistakes(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({
