@@ -23,7 +23,7 @@ const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 class App extends React.PureComponent {
   _renderGameScreen() {
     const {
-      AuthorizationStatus,
+      authorizationStatus,
       login,
       maxMistakes,
       mistakes,
@@ -53,13 +53,24 @@ class App extends React.PureComponent {
     }
 
     if (step >= questions.length) {
-      return (
-        <WinScreen
-          questionsCount={questions.length}
-          mistakesCount={mistakes}
-          onReplayButtonClick={resetGame}
-        />
-      );
+      if (authorizationStatus === AuthorizationStatus.AUTH) {
+        return (
+          <WinScreen
+            questionsCount={questions.length}
+            mistakesCount={mistakes}
+            onReplayButtonClick={resetGame}
+          />
+        );
+      } else if (authorizationStatus === AuthorizationStatus.NO_AUTH) {
+        return (
+          <AuthScreen
+            onReplayButtonClick={resetGame}
+            onSubmit={login}
+          />
+        );
+      }
+
+      return null;
     }
 
     if (question) {

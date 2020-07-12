@@ -7,6 +7,7 @@ import reducer from '@reducer/reducer.js';
 import {Operation as DataOperation} from '@reducer/data/data';
 import {Operation as UserOperation, ActionCreator, AuthorizationStatus} from '@reducer/user/user';
 import {createAPI} from './api';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 
 const onUnauthorized = () => {
@@ -17,7 +18,9 @@ const api = createAPI(onUnauthorized);
 
 const store = createStore(
     reducer,
-    applyMiddleware(thunk.withExtraArgument(api))
+    composeWithDevTools(
+        applyMiddleware(thunk.withExtraArgument(api))
+    )
 );
 
 store.dispatch(DataOperation.loadQuestions());
