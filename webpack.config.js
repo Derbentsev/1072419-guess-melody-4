@@ -47,6 +47,8 @@ module.exports = (env) => {
         PropTypes: `prop-types`,
         Switch: [`react-router-dom`, `Switch`],
         Route: [`react-router-dom`, `Route`],
+        Router: [`react-router-dom`, `Router`],
+        Link: [`react-router-dom`, `Link`],
         BrowserRouter: [`react-router-dom`, `BrowserRouter`],
       }),
     ]

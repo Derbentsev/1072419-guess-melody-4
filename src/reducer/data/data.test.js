@@ -1,9 +1,9 @@
 import {reducer, ActionType, Operation} from './data';
 import MockAdapter from 'axios-mock-adapter';
-import {createApi} from '@reducer/api';
+import {createAPI} from '@src/api';
 
 
-const api = createApi(() => {});
+const api = createAPI(() => {});
 
 const questions = [
   {
@@ -71,7 +71,7 @@ describe(`Operation work correctly`, () => {
     return questionLoader(dispatch, () => {}, api)
       .then(() => {
         expect(dispatch).toHaveBeenCalledTimes(1);
-        expect(dispatch).toHaveBeenNthCalledWidth(1, {
+        expect(dispatch).toHaveBeenNthCalledWith(1, {
           type: ActionType.LOAD_QUESTIONS,
           payload: [{fake: true}],
         });

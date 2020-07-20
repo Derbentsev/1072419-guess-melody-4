@@ -13,7 +13,7 @@ const ActionCreator = {
   loadQuestions: (questions) => {
     return {
       type: ActionType.LOAD_QUESTIONS,
-      paylod: questions,
+      payload: questions,
     };
   },
 };

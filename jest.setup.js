@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
   Router,
+  Link,
 } from 'react-router-dom';
 
 
@@ -17,6 +18,7 @@ window.PropTypes = require(`prop-types`);
 window.Switch = Switch;
 window.Route = Route;
 window.Router = Router;
+window.Link = Link;
 window.BrowserRouter = BrowserRouter;
 
 Enzyme.configure({adapter: new Adapter()});

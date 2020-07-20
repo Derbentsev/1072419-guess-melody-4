@@ -1,4 +1,4 @@
-import {reducer, ActionType, ActionCreator} from './reducer';
+import {reducer, ActionType, ActionCreator} from './game';
 
 
 it(`Reducer without additional parameters should return initial state`, () => {

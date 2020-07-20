@@ -1,4 +1,3 @@
-import {Link} from `rect-router-dom`;
 import {AppRoute} from '@consts/';
 
 

@@ -2,7 +2,6 @@ import {GameType} from '@consts/index';
 import {connect} from 'react-redux';
 import Mistakes from '@components/mistakes/mistakes';
 import {getMistakes} from '@reducer/game/selectors';
-import {Link} from 'react-router-dom';
 import {ActionCreator} from '@reducer/game/game';
 import {AppRoute} from '@consts/';
 
