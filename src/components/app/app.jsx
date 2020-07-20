@@ -15,6 +15,9 @@ import {getStep, getMistakes, getMaxMistakes} from '@reducer/game/selectors';
 import {getQuestions} from '@reducer/data/selectors';
 import {getAuthorizationStatus} from '@reducer/user/selectors';
 import {Operation as UserOperation} from '@reducer/user/user';
+import PrivateRoute from '@components/private-route/private-route';
+import history from '@history/history';
+import {AppRoute} from '@consts/';
 
 
 const GenreQuestionScreenWrapped = withActivePlayer(withUserAnswer(GenreQuestionScreen));
@@ -104,34 +107,41 @@ class App extends React.PureComponent {
   }
 
   render() {
-    const {questions} = this.props;
+    const {questions, mistakes, resetGame, login} = this.props;
 
     return (
-      <BrowserRouter>
+      <Router
+        history={history}
+      >
         <Switch>
-          <Route exact path = '/'>
+          <Route exact path = {AppRoute.ROOT}>
             {this._renderGameScreen()}
           </Route>
-          <Route exact path='/artist'>
-            <ArtistQuestionScreenWrapped
-              question={questions[1]}
-              onAnswer={() => {}}
-            />
-          </Route>
-          <Route exact path = '/genre'>
-            <GenreQuestionScreenWrapped
-              question={questions[0]}
-              onAnswer={() => {}}
-            />
-          </Route>
-          <Route exact path = '/dev-auth'>
+          <Route exact path={AppRoute.LOGIN}>
             <AuthScreen
-              onReplayButtonClick = {() => {}}
-              onSubmit = {() => {}}
+              onReplayButtonClick={resetGame}
+              onSubmit={login}
             />
           </Route>
+          <Route exact path = {AppRoute.LOSE}>
+            <GameOverScreen
+              onReplayButtonClick={resetGame}
+            />
+          </Route>
+          <PrivateRoute
+            exact path = {AppRoute.RESULT}
+            render={() => {
+              return(
+                <WinScreen
+                  questionsCount={questions.length}
+                  mistakesCount={mistakes}
+                  onReplayButtonClick = {() => {}}
+                />
+              );
+            }}
+          />
         </Switch>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
