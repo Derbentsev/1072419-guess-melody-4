@@ -26,5 +26,4 @@ GameOverScreen.propTypes = {
   onReplayButtonClick: PropTypes.func.isRequired,
 };
 
-
 export default GameOverScreen;

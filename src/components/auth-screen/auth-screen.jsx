@@ -4,7 +4,6 @@ export default class AuthScreen extends React.PureComponent {
 
     this.loginRef = React.createRef();
     this.passwordRef = React.createRef();
-
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 

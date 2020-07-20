@@ -121,6 +121,7 @@ describe(`Render App`, () => {
               authorizationStatus={AuthorizationStatus.NO_AUTH}
               login={() => {}}
               maxMistakes={3}
+              mistakes={3}
               questions={questions}
               onUserAnswer={() => {}}
               onWelcomeButtonClick={() => {}}

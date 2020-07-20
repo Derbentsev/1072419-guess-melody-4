@@ -29,4 +29,5 @@ WinScreen.propTypes = {
   onReplayButtonClick: PropTypes.func.isRequired,
 };
 
+
 export default WinScreen;
