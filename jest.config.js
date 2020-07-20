@@ -11,6 +11,7 @@ module.exports = {
     "^@hocs(.*)$": `<rootDir>/src/hocs/$1`,
     "^@utils(.*)$": `<rootDir>/src/utils/$1`,
     "^@reducer(.*)$": `<rootDir>/src/reducer/$1`,
+    "^@history(.*)$": `<rootDir>/src/history/$1`,
   },
   "coveragePathIgnorePatterns": [`/test-setup.js`]
 };

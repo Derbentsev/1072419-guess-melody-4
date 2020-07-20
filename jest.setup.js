@@ -1,6 +1,11 @@
 import Enzyme from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  Router,
+} from 'react-router-dom';
 
 
 window.React = require(`react`);
@@ -11,6 +16,7 @@ window.PropTypes = require(`prop-types`);
 
 window.Switch = Switch;
 window.Route = Route;
+window.Router = Router;
 window.BrowserRouter = BrowserRouter;
 
 Enzyme.configure({adapter: new Adapter()});

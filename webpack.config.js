@@ -36,6 +36,7 @@ module.exports = (env) => {
         '@hocs': path.resolve(__dirname, `./src/hocs/`),
         '@utils': path.resolve(__dirname, `./src/utils/`),
         '@reducer': path.resolve(__dirname, `./src/reducer/`),
+        '@history': path.resolve(__dirname, `./src/history/`),
       },
       modules: [`node_modules`, path.resolve(path.join(__dirname, `public`))],
       extensions: [`.js`, `.jsx`, `.ts`, `.tsx`, `.webm`]
