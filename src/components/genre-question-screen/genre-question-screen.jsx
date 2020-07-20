@@ -3,8 +3,6 @@ import GenreQuestionItem from '@components/genre-question-item/genre-question-it
 
 
 export default class GenreQuestionScreen extends React.PureComponent {
-
-
   render() {
     const {
       onAnswer,
